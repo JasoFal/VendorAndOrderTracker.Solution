@@ -6,8 +6,13 @@ using System;
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -41,14 +46,14 @@ namespace VendorAndOrderTracker.Tests
       Assert.AreEqual(1, result);
     }
 
-    // [TestMethod]
-    // public void GetAll_ReturnsAllVendorObjects_VendorList()
-    // {
-    //   Vendor newVendor1 = new Vendor("Test1", "Test2");
-    //   Vendor newVendor2 = new Vendor("Test3", "Test4");
-    //   List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
-    //   List<Vendor> result = Vendor.GetAll();
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      Vendor newVendor1 = new Vendor("Test1", "Test2");
+      Vendor newVendor2 = new Vendor("Test3", "Test4");
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
