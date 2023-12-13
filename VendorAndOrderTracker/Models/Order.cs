@@ -16,11 +16,17 @@ namespace VendorAndOrderTracker.Models
       OrderDescription = description;
       OrderPrice = price;
       OrderDate = date;
+      _instances.Add(this);
     }
 
     public static List<Order> GetAll()
     {
       return _instances;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }

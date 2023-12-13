@@ -6,8 +6,13 @@ using System;
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -99,6 +104,16 @@ namespace VendorAndOrderTracker.Tests
     public void GetAll_ReturnsEmptyList_OrderList()
     {
       List<Order> newList = new List<Order> { };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsItems_ItemList()
+    {
+      Order newOrder01 = new Order("Test", "This", 15, "05/14/23");
+      Order newOrder02 = new Order("Thing", "thing", 75146, "111/111/1111");
+      List<Order> newList = new List<Order> { newOrder01, newOrder02 };
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
