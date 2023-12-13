@@ -83,5 +83,16 @@ namespace VendorAndOrderTracker.Tests
       string result = newOrder.OrderDate;
       Assert.AreEqual(result, date);
     }
+
+    [TestMethod]
+    public void SetOrderDate_SetOrderDate_String()
+    {
+      string date = "11/6/83";
+      Order newOrder = new Order("Test", "Double", 4.21, date);
+      string updatedOrderDate = "8/31/95";
+      newOrder.OrderDate = updatedOrderDate;
+      string result = newOrder.OrderDate;
+      Assert.AreEqual(updatedOrderDate, result);
+    }
   }
 }  
