@@ -4,7 +4,7 @@ namespace VendorAndOrderTracker.Models
 {
   public class Order
   {
-    public string OrderDescription { get; }
+    public string OrderDescription { get; set; }
 
     public Order(string description)
     {
