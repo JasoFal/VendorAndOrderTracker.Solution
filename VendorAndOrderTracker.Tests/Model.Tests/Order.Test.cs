@@ -16,7 +16,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetTitle_ReturnTitle_String()
+    public void GetOrderTitle_ReturnOrderTitle_String()
     {
       string title = "Test Order";
       Order newOrder = new Order(title, "Order Description", 2.14);
@@ -25,7 +25,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void SetTitle_SetTitle_String()
+    public void SetOrderTitle_SetOrderTitle_String()
     {
       string title = "Test Order";
       Order newOrder = new Order(title, "Order Description", 3.14);
@@ -36,7 +36,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetDescription_ReturnsDescription_String()
+    public void GetOrderDescription_ReturnsOrderDescription_String()
     {
       string description = "Test Order";
       Order newOrder = new Order("thing", description, 3.14);
@@ -45,7 +45,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void SetDescription_SetDescription_String()
+    public void SetOrderDescription_SetOrderDescription_String()
     {
       string description = "Test Order";
       Order newOrder = new Order("thing", description, 4.12);
@@ -56,12 +56,23 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetOrderPrice_ReturnsOrderPrice_Float()
+    public void GetOrderPrice_ReturnsOrderPrice_Double()
     {
       double price = 4.74;
       Order newOrder = new Order("Test", "Order", price);
       double result = newOrder.OrderPrice;
       Assert.AreEqual(result, price);
+    }
+
+    [TestMethod]
+    public void SetOrderPrice_SetOrderPrice_Double()
+    {
+      double price = 3.12;
+      Order newOrder = new Order("Test", "Double", 4.85);
+      double updatedOrderPrice = 1068.43;
+      newOrder.OrderPrice = updatedOrderPrice;
+      double result = newOrder.OrderPrice;
+      Assert.AreEqual(updatedOrderPrice, result);
     }
   }
 }  
