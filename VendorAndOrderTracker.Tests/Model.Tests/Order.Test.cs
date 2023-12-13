@@ -25,6 +25,17 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      string title = "Test Order";
+      Order newOrder = new Order(title, "Order Description");
+      string updatedOrderTitle = "Testier Order";
+      newOrder.OrderTitle = updatedOrderTitle;
+      string result = newOrder.OrderTitle;
+      Assert.AreEqual(updatedOrderTitle, result);
+    }
+
+    [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
       string description = "Test Order";
@@ -38,10 +49,10 @@ namespace VendorAndOrderTracker.Tests
     {
       string description = "Test Order";
       Order newOrder = new Order("thing", description);
-      string updatedOrder = "Steamed Hams";
-      newOrder.OrderDescription = updatedOrder;
+      string updatedOrderDescription = "Steamed Hams";
+      newOrder.OrderDescription = updatedOrderDescription;
       string result = newOrder.OrderDescription;
-      Assert.AreEqual(updatedOrder, result);
+      Assert.AreEqual(updatedOrderDescription, result);
     }
   }
 }  
