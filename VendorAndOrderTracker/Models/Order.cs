@@ -7,16 +7,22 @@ namespace VendorAndOrderTracker.Models
     public string OrderTitle { get; set; }
     public string OrderDescription { get; set; }
     public double OrderPrice { get; set; }
-    public string OrderDate { get; set; }
-    public int Id { get; }
+    public int OrderDueDay { get; set; }
+    public int OrderDueMonth { get; set; }
+    public int OrderDueYear { get; set; }
+    public string OrderDueDate { get; set; }
+    public int Id { get; } 
     private static List<Order> _instances = new List<Order> { };
 
-    public Order(string title, string description, double price, string date)
+    public Order(string title, string description, double price, int day, int month, int year)
     {
       OrderTitle = title;
       OrderDescription = description;
       OrderPrice = price;
-      OrderDate = date;
+      OrderDueMonth = month;
+      OrderDueDay = day;
+      OrderDueYear = year;
+      OrderDueDate = OrderDueMonth.ToString() + "/" + OrderDueDay.ToString() + "/" + OrderDueYear.ToString();
       _instances.Add(this);
       Id = _instances.Count;
     }
