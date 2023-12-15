@@ -3,7 +3,7 @@
 }
 <body>
   @using VendorAndOrderTracker.Models;
-  <h3>All orders by this vendor:</h3>
+  <h3>All orders from @Model["vendor"].VendorName:</h3>
   <ul>
   @foreach (Order order in @Model["orders"])
   {
