@@ -72,7 +72,7 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
-      Order newOrder = new Order("thing", "thing", 5.65, "05/27/1999");
+      Order newOrder = new Order("thing", "thing", 5.65, 10, 10, 10);
       List<Order> newList = new List<Order> { newOrder };
       Vendor newVendor = new Vendor("thing", "thing");
       newVendor.AddOrder(newOrder);
