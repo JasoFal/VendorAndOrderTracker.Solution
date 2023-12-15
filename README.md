@@ -29,7 +29,6 @@ _Here you go Pierre, a database where you can list the various vendors who for s
 ## Known Bugs
 
 * _No known bugs_
-* _but don't go looking, you know who you are_
 
 ## License
 
