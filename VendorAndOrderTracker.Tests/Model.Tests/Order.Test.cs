@@ -114,5 +114,30 @@ namespace VendorAndOrderTracker.Tests
       Order result = Order.Find(2);
       Assert.AreEqual(newOrder02, result);
     }
+
+    [TestMethod]
+    public void GetOrderDueDate_ReturnOrderDueDate_String()
+    {
+      int month = 8;
+      int day = 27;
+      int year = 2010;
+      Order newOrder = new Order("test", "test", 1.11, month, day, year);
+      string dueDate = month.ToString() + "/" + day.ToString() + "/" + year.ToString();
+      string result = newOrder.OrderDueDate;
+      Assert.AreEqual(result, dueDate);
+    }
+
+    [TestMethod]
+    public void SetOrderDueDate_SetOrderDueDate_String()
+    {
+      int month = 8;
+      int day = 27;
+      int year = 2010;
+      Order newOrder = new Order("test", "test", 1.11, month, day, year);
+      string newDueDay = "05/27/1999";
+      newOrder.OrderDueDate = newDueDay;
+      string brandNewDueDate = newOrder.OrderDueDate;
+      Assert.AreEqual(newDueDay, brandNewDueDate);
+    }
   }
-}  
+}

@@ -11,7 +11,7 @@ namespace VendorAndOrderTracker.Models
     public int Id { get; } 
     private static List<Order> _instances = new List<Order> { };
 
-    public Order(string title, string description, double price, int day, int month, int year)
+    public Order(string title, string description, double price, int month, int day, int year)
     {
       OrderTitle = title;
       OrderDescription = description;
