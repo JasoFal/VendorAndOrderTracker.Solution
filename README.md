@@ -2,7 +2,7 @@
 
 #### By _**Jason Falk**_
 
-#### _A Fidgetech independent project created in order to demonstrate knowledge of mvc. Some tests are missing as I changed how I take in the date information and just didn't get around to writing the tests for them._
+#### _A Fidgetech independent project created in order to demonstrate knowledge of mvc._
 
 ## Technologies Used
 
@@ -17,7 +17,7 @@ _Here you go Pierre, a database where you can list the various vendors who for s
 
 ## Setup/Installation Requirements
 
-1. _Open Git Bash/Open terminal of your choice navigate to directory of your choice and run this command `https://github.com/JasoFal/VendorAndOrderTracker.Solution.git`_
+1. _Open Git Bash/Open terminal of your choice navigate to directory of your choice and run this command `git clone https://github.com/JasoFal/VendorAndOrderTracker.Solution.git`_
 2. _Once you have cloned the project, navigate to project folder using Git Bash/ a terminal of your choice using the cd command. Or you can use file explorer to open the project manually._
 3. _Then once in the VendorAndOrderTracker directory, run: `dotnet build`._
 ------------------
