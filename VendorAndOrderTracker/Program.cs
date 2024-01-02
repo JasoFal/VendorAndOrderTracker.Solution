@@ -12,6 +12,7 @@ namespace VendorAndOrderTracker
       WebApplication app = builder.Build();
       // app.UseDeveloperExceptionPage();
       app.UseHttpsRedirection();
+      app.UseStaticFiles();
       app.UseRouting();
       app.MapControllerRoute(
         name: "default",
