@@ -23,19 +23,41 @@ namespace VendorAndOrderTracker.Tests
     [TestMethod]
     public void GetVendorName_ReturnVendorName_String()
     {
-      string name = "Sal's Salami";
+      string name = "test";
       Vendor newVendor = new Vendor(name, "Test");
       string result = newVendor.VendorName;
       Assert.AreEqual(name, result);
     }
 
     [TestMethod]
+    public void SetVendorName_SetVendorName_String()
+    {
+      string name = "test";
+      Vendor newVendor = new Vendor(name, "test test test test.");
+      string newName = "test squared";
+      newVendor.VendorName = newName;
+      string result = newVendor.VendorName;
+      Assert.AreEqual(newName, result);
+    }
+
+    [TestMethod]
     public void GetVendorDescription_ReturnVendorDescription_String()
     {
-      string description = "Sal's Salami sells salami.";
-      Vendor newVendor = new Vendor("Sal's Salami", description);
+      string description = "test test test.";
+      Vendor newVendor = new Vendor("test", description);
       string result = newVendor.VendorDescription;
       Assert.AreEqual(description, result);
+    }
+
+    [TestMethod]
+    public void SetVendorDescription_SetVendorDescription_String()
+    {
+      string description = "test test test test test test";
+      Vendor newVendor = new Vendor("test", description);
+      string newDescription = "test test squared";
+      newVendor.VendorDescription = newDescription;
+      string result = newVendor.VendorDescription;
+      Assert.AreEqual(newDescription, result);
     }
 
     [TestMethod]
@@ -78,6 +100,20 @@ namespace VendorAndOrderTracker.Tests
       newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.Orders;
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void ClearAll_ClearsAll_Instances_VendorList()
+    {
+      string name01 = "NameTest1";
+      string description01 = "DescriptionTest01";
+      Vendor newVendor1 = new Vendor(name01, description01);
+      string name02 = "NameTest02";
+      string description02 = "DescriptionTest02";
+      Vendor newVendor2 = new Vendor(name02, description02);
+      List<Vendor> result = new List<Vendor> { };
+      Vendor.ClearAll();
+      CollectionAssert.AreEqual(Vendor.GetAll(), result);
     }
   }
 }
