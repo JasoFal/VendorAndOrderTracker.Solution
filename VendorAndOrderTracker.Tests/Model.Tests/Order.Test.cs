@@ -139,5 +139,15 @@ namespace VendorAndOrderTracker.Tests
       string brandNewDueDate = newOrder.OrderDueDate;
       Assert.AreEqual(newDueDay, brandNewDueDate);
     }
+
+    [TestMethod]
+    public void ClearAll_ClearsAll_Instances_OrderList()
+    {
+      Order newOrder01 = new Order("Test", "Test", 15, 10, 10, 10);
+      Order newOrder02 = new Order("Test", "Test", 16, 10, 10, 10);
+      List<Order> result = new List<Order> { };
+      Order.ClearAll();
+      CollectionAssert.AreEqual(Order.GetAll(), result);
+    }
   }
 }
